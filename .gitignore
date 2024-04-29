@@ -19,7 +19,6 @@ log/
 
 # build folders
 build
-dist
 
 # docs
 docs

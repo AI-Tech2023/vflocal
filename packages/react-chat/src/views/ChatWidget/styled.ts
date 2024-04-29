@@ -2,7 +2,7 @@ import { ClassName } from '@/constants';
 import { tagFactory } from '@/hocs';
 import { CSS, styled } from '@/styles';
 
-const CHAT_WIDTH = 380;
+const CHAT_WIDTH = 600; // Default Value: 380 | AIT Value for Mobile: 380 | AIT Value for Desktop: 600
 const MAX_CHAT_HEIGHT = 800;
 
 const tag = tagFactory(ClassName.WIDGET);

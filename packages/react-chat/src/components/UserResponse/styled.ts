@@ -27,7 +27,7 @@ export const Container = styled(tag('div'), {
     mode: {
       overlay: {
         [`& ${Message.Container}`]: {
-          maxWidth: '248px',
+          maxWidth: '80%', // AIT: Default Value: 282px
         },
       },
       embedded: {

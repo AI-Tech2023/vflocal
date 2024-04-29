@@ -1,6 +1,10 @@
 import { serializeToMarkdown } from '@voiceflow/slate-serializer/markdown';
 import React from 'react';
 import rehypeRaw from 'rehype-raw';
+import rehypeKatex from 'rehype-katex'; // AIT: Import rehype-katex
+//import {KatexOptions} from 'katex'; // AIT: Import katex (to use katex options)
+
+//type Options = Omit<KatexOptions, 'output: mathml' | 'throwOnError'>; // AIT: Define KatexOptions
 
 import Message from '@/components/Message';
 import type { TextMessageProps } from '@/components/SystemResponse/types';
@@ -25,7 +29,7 @@ const DefaultText: React.FC<DefaultTextProps> = ({ text }) => {
   if (api?.config?.allowDangerousHTML) {
     return (
       <Message from="system">
-        <Markdown rehypePlugins={[rehypeRaw]}>{content}</Markdown>
+        <Markdown rehypePlugins={[rehypeRaw, [rehypeKatex, { output: 'mathml'}]]}>{content}</Markdown>
       </Message>
     );
   }

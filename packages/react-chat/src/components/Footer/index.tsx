@@ -52,7 +52,7 @@ const Footer: React.FC<FooterProps> = ({ withWatermark, hasEnded, disableSend, o
           value={message}
           placeholder="Message…"
           // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus
+          // autoFocus / AIT: Removed Autofocus from chatinput
           onValueChange={setMessage}
           onSend={handleSend}
           disableSend={disableSend}

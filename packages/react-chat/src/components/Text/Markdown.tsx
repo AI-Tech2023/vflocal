@@ -3,6 +3,7 @@ import ReactMarkdown, { Options } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize from 'rehype-sanitize';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math'; // AIT: Import remark-math
 
 import { styled } from '@/styles';
 
@@ -40,8 +41,8 @@ const MarkdownText = styled(ReactMarkdown, {
 
 MarkdownText.defaultProps = {
   urlTransform: transformURL,
-  rehypePlugins: [rehypeRaw, [rehypeSanitize, schema]],
-  remarkPlugins: [remarkGfm],
+  rehypePlugins: [rehypeRaw, [rehypeSanitize, schema],], // AIT: Add rehypeKatex
+  remarkPlugins: [remarkGfm, remarkMath,], // AIT: Add remarkMath
   components: {
     a: ({ node, href, children, ...props }) => (
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
